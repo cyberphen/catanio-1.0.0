@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catan - The Base Game|Login</title>
-</head>
-<body>
-    <button onclick="window.location.href = '/home';">Login</button>
-</body>
+{{>header}}
+        <form action="/home" method="get">
+            <input name="userName">
+            <input name="authCode">
+            <button>Login</button>
+        </form>
+    </body>
 </html>

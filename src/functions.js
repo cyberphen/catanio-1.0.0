@@ -79,6 +79,58 @@ const set_board = () => {
     return [boardData,seaData]
 }
 
+const addRoom = (db,req) => {
+    let updateUser = db.collection("users").updateOne({
+        userName: req.query.userName, "activeRooms.roomName": req.query.roomName
+    },{
+        $set: {"activeRooms.$.active":1}
+    })
+    updateUser.then((result) => {
+        if(result.matchedCount == 0) {
+            db.collection("users").updateOne({
+                userName: req.query.userName
+            },{
+                $push: {activeRooms:{
+                    roomName: req.query.roomName,
+                    color: req.query.color,
+                    active: 1
+                }}
+            })
+        }
+    })
+}
+
+const update_authCode = (db,authData) => {
+    db.collection("users").updateOne({
+        userName: authData.userName,
+        authCode: authData.authCode
+    },{
+        $set: {
+            authCode: authData.newAuthCode
+        }
+    })
+}
+
+const check_auth = (db, authData, socket) => {
+    db.collection("users").findOne({
+        userName: authData.userName,
+        authCode: authData.authCode
+    }, (error, task) => {
+        if(task) {
+            update_authCode(db,authData)
+        }
+        else if(error) {
+            socket.emit("logout", error)
+        }
+        else {
+            socket.emit("logout","User not found/Authentication token mismatch.")
+        }
+    })
+}
+
 module.exports = {
-    set_board
+    set_board,
+    addRoom,
+    update_authCode,
+    check_auth
 }

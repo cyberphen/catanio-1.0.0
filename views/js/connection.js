@@ -1,15 +1,15 @@
 const socket = io()
 
-socket.on("initialize", () => {
-    //variables roomName, userName, color
-    boardData = {}
-    boardData.roomName = "Eitght"
-    boardData.userName = "ankush1492"
-    boardData.color = "red"
-    socket.emit("loadBoard", boardData)
+socket.on("authCodeGenerated", authCode => {
+    //alert(authCode)
+    let authData = {}
+    authData.userName = localStorage.getItem("userName")
+    authData.authCode = localStorage.getItem("authCode")
+    socket.emit("authCodeGenerated",authData)
+    localStorage.setItem("authCode", authCode)
 })
 
-socket.on("loadBoard", boardData => {
-    //variables roomName, userName, color, seaData, boardData
-    set_board(boardData)
+socket.on("logout", (message) => {
+    alert(message)
+    window.location.href = "/"
 })
