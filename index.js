@@ -48,7 +48,8 @@ io.on('connection', (socket) => {
             }
             console.log("Connected to database successfully!")
             const db = client.db(databaseName)
-
+            
+            //Find room or create if does not exists
             db.collection("rooms").findOne({roomName: boardData.roomName}, (error, task) => {
                 if(task) {
                     console.log("Room exists:",task.roomName)
