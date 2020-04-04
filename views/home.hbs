@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/home.css">
+    <link rel="stylesheet" type="text/css" href="styles/webflow.css">
+    {{>header}}
+    <title>Catan - The Base Game</title>
+</head>
+<body>
+    <input type="hidden" value="" id="username">
+    <input type="hidden" value="" id="room">
+    <div id="drawer">
+        <div id="board" style="margin-top: 6px; margin-left: 6px">
+            <div class="first">
+                <div id="c1" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/northwest-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="c2" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/top-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="c3" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/top-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="c4" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/northeast-tile.png);" class="hexagon-in2"></div></div></div>
+            </div>
+            <div class="second">
+                <div id="c5" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/topleft-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="one" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/bottomleft-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="two" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/bottomleft-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="three" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/bottomleft-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="c6" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/topright-tile.png);" class="hexagon-in2"></div></div></div>
+            </div>
+            <div class="third">
+                <div id="c7" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/topleft-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="four" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/bottomleft-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="five" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/bottomleft-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="six" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/bottomleft-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="seven" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/bottomleft-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="c8" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/topright-tile.png);" class="hexagon-in2"></div></div></div>
+            </div>
+            <div class="fourth">
+                <div id="c9" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/west-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="eight" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/bottomleft-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="nine" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/bottomleft-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="ten" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/bottomleft-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="eleven" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/bottomleft-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="twelve" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/bottomleft-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="c10" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/east-tile.png);" class="hexagon-in2"></div></div></div>
+            </div>
+            <div class="fifth">
+                <div id="c11" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/bottomleft-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="thirteen" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/bottomleft-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="fourteen" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/bottomleft-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="fifteen" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/bottomleft-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="sixteen" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/bottomleft-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="c12" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/bottomright-tile.png);" class="hexagon-in2"></div></div></div>
+            </div>
+            <div class="sixth">
+                <div id="c13" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/bottomleft-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="seventeen" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/bottomleft-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="eighteen" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/bottomleft-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="nineteen" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/bottomleft-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="c14" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/bottomright-tile.png);" class="hexagon-in2"></div></div></div>
+            </div>
+            <div class="seventh">
+                <div id="c15" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/southwest-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="c16" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/bottom-tile.png);" class="hexagon-in2"></div></div></div> 
+                <div id="c17" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/bottom-tile.png);" class="hexagon-in2"></div></div></div>
+                <div id="c18" class="hexagon hexagon2"><div class="hexagon-in1"><div style="background-image: url(images/tiles/southeast-tile.png);" class="hexagon-in2"></div></div></div>
+            </div>
+        </div>
+    </div>
+    {{>footer}}
+</body>
+</html>
