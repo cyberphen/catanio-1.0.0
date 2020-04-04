@@ -1,5 +1,11 @@
 body {
     background-image: url(../images/wood-bg.jpg);
+    position: fixed;
+}
+.board {
+    transform: scale(0.5);
+    margin-left: -380px;
+    margin-top: -390px;
 }
 .hexagon {
     overflow: hidden;
