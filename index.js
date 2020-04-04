@@ -27,16 +27,10 @@ hbs.registerPartials(templateDirectoryPath)
 app.use(express.static(publicDirectoryPath))
 
 app.get('', (req, res) => {
-    res.render('index', {
-        name: "Ankush",
-        title: "header"
-    })
+    res.render('index')
 })
 app.get('/home', (req, res) => {
-    res.render('home', {
-        name: "Ankush",
-        title: "header"
-    })
+    res.render('home')
 })
 
 io.on('connection', (socket) => {
