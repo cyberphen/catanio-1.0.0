@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="in">
+    </div>
+</body>
+<script>
+    // let array = [1,2,3]
+    // array.forEach((val, index) => {
+    //     alert(val)
+    //     alert(index)
+    // })
+    // let a = 1
+    // for(i=1;i<=8;i++) {
+    //     for(j=i*-1; j<i;j++) {
+    //         document.getElementById("in").innerHTML += `
+    //     <div style="margin-top: ${j*-45}px; margin-left:${i*45}px; position: absolute">
+    //         ${a}
+    //     </div>
+    //     `
+    //     a++
+    //     }
+    //     for(j=i*-1; j<i;j++) {
+    //         document.getElementById("in").innerHTML += `
+    //     <div style="margin-top: ${i*-45}px; margin-left:${j*-45}px; position: absolute">
+    //         ${a}
+    //     </div>
+    //     `
+    //     a++
+    //     }
+    //     for(j=i*-1; j<i;j++) {
+    //         document.getElementById("in").innerHTML += `
+    //     <div style="margin-top: ${j*45}px; margin-left:${i*-45}px; position: absolute">
+    //         ${a}
+    //     </div>
+    //     `
+    //     a++
+    //     }
+    //     for(j=i*-1; j<i;j++) {
+    //         document.getElementById("in").innerHTML += `
+    //     <div style="margin-top: ${i*45}px; margin-left:${j*45}px; position: absolute">
+    //         ${a}
+    //     </div>
+    //     `
+    //     a++
+    //     }
+    // }
+
+    var bajaru = ["zero","one","two","three","four","five", "six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"]
+    var arr = [16,15,18,12,11,10,14,17,7,6,5,9,13,3,2,1,4,8]
+    var str = `["`
+    arr.forEach(val => {
+        str += bajaru[val] + `","`
+    })
+    str += `"]`
+    document.getElementById("in").innerHTML = str
+</script>
+</html>

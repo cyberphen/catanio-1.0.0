@@ -1,18 +1,21 @@
 {{>header}}
-        <form action="game" method="get">
-            <input name="roomName" placeholder="roomName">
-            <input name="color" placeholder="color">
-            <input name="userName" placeholder="userName">
-            <input name="authCode" placeholder="authCode">
-            <input name="user1" placeholder="user1">
+        <form action="game" method="post" id="gameForm">
+            <input name="roomName" placeholder="roomName" id="roomName">
+            <input name="userName" placeholder="userName" id="userName">
+            {{!-- <input type="hidden" name="authCode" placeholder="authCode" value="{{authCode}}"> --}}
             <input name="user2" placeholder="user2">
             <input name="user3" placeholder="user3">
-            <button>Start</button>
+            <input name="user4" placeholder="user4">
+            <button id="gameButton">Start</button>
         </form>
         {{>footer}}
+        <script src="js/home.js"></script>
         <script>
             localStorage.setItem("userName", "{{userName}}")
-            localStorage.setItem("authCode", "{{authCode}}")
+            document.getElementById("gameButton").addEventListener("click", function(event){
+                event.preventDefault()
+                join_room_submit()
+            })
         </script>
     </body>
 </html>

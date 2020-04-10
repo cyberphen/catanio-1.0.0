@@ -28,6 +28,10 @@ body {
             transform: rotate(-60deg);
 }
 .hexagon-in2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
@@ -86,11 +90,11 @@ body {
     margin-top: -400px;
     margin-left: 190px;
 }
-#two {
+#twelve { 
     margin-top: -400px;
     margin-left: 380px;
 }
-#three {
+#eleven { 
     margin-top: -400px;
     margin-left: 570px;
 }
@@ -98,19 +102,19 @@ body {
     margin-top: -400px;
     margin-left: 760px;
 }
-#four {
+#two { 
     margin-top: -400px;
     margin-left: 190px;
 }
-#five {
+#thirteen { 
     margin-top: -400px;
     margin-left: 380px;
 }
-#six {
+#eighteen { 
     margin-top: -400px;
     margin-left: 570px;
 }
-#seven {
+#ten { 
     margin-top: -400px;
     margin-left: 760px;
 }
@@ -118,23 +122,23 @@ body {
     margin-top: -400px;
     margin-left: 950px;
 }
-#eight {
+#three { 
     margin-top: -400px;
     margin-left: 190px;
 }
-#nine {
+#fourteen { 
     margin-top: -400px;
     margin-left: 380px;
 }
-#ten {
+#nineteen { 
     margin-top: -400px;
     margin-left: 570px;
 }
-#eleven {
+#seventeen { 
     margin-top: -400px;
     margin-left: 760px;
 }
-#twelve {
+#nine { 
     margin-top: -400px;
     margin-left: 950px;
 }
@@ -142,19 +146,19 @@ body {
     margin-top: -400px;
     margin-left: 1140px;
 }
-#thirteen {
+#four { 
     margin-top: -400px;
     margin-left: 190px;
 }
-#fourteen {
+#fifteen { 
     margin-top: -400px;
     margin-left: 380px;
 }
-#fifteen {
+#sixteen { 
     margin-top: -400px;
     margin-left: 570px;
 }
-#sixteen {
+#eight { 
     margin-top: -400px;
     margin-left: 760px;
 }
@@ -162,15 +166,15 @@ body {
     margin-top: -400px;
     margin-left: 950px;
 }
-#seventeen {
+#five { 
     margin-top: -400px;
     margin-left: 190px;
 }
-#eighteen {
+#six { 
     margin-top: -400px;
     margin-left: 380px;
 }
-#nineteen {
+#seven { 
     margin-top: -400px;
     margin-left: 570px;
 }
@@ -259,4 +263,122 @@ body {
     top: 0px;
     left: 0px;
     width: 35px;
+}
+.dice-number-piece {
+    font-family: auto;
+    background-color: beige;
+    height: 80px;
+    width: 80px;
+    position: relative;
+    font-size: 51px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 400px;
+    background-image: linear-gradient(-228deg, beige, #828256e6);
+    box-shadow: 0px 0px 15px 3px #00000087;
+}
+
+.dice-box {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dice1 {
+    width: 100px;
+    transform: rotate(-9deg);
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+.dice2 {
+    margin-left: 30px;
+    width: 100px;
+    transform: rotate(23deg);
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+.placement-circle {
+    border-radius: 300px;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    box-shadow: 0px 0px 6px 6px white;
+}
+
+.turn-pop {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 40px;
+    animation-duration: 500ms;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.turn-text {
+    filter: drop-shadow(0px 0px 10px white);
+    animation-duration: 500ms;
+}
+
+@keyframes turn-pop {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+}
+
+@keyframes turn-text-pop {
+    from {
+        font-size: 0px;
+    }
+    to {
+        font-size: 40px;
+    }
+}
+
+@keyframes turn-out {
+    from {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+
+@keyframes turn-text-out {
+    from {
+        font-size: 40px;
+    }
+    to {
+        font-size: 0px;
+    }
+}
+
+.settlement {    
+    width: 25px;
+    height: 25px;
+    max-width: unset;
+    top: -38px;
+    left: 6.5px;
+}
+
+.arrow {    
+    width: 15px;
+    left: 2.5px;
+    top: -26px;
 }

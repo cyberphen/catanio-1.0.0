@@ -1,0 +1,54 @@
+let temp = Object.keys(boardData).filter( function (key) { return boardData[key][0] == 'dessert' })[0]
+    let dessert_xy = boardData[temp][2]
+    console.log(dessert_xy)
+    let i = 2
+    let number_array = [temp]
+    let dice_array = []
+    while(number_array.length > 0) {
+        number_array.forEach((number_tile,index) => {
+            number_array.splice(index,1)
+            for(j=i*-1; j<i;j++) {
+                console.log(i*-1,j)
+                let num = Object.keys(boardData).filter( function (key) { return boardData[key][2][0] == boardData[number_tile][2][0]+i*-1 &&  boardData[key][2][1] == boardData[number_tile][2][1]+j})[0]
+                let found = dice_array.find(element => element == num)
+                if(!found && num) {
+                    dice_array.push(num)
+                    number_array.push(num)
+                    console.log(num)
+                }
+                // dice_array.push(Object.keys(boardData).filter( function (key) { return boardData[key][2][0] == dessert_xy[0]+i*-1 &&  boardData[key][2][1] == dessert_xy[1]+j})[0])
+                // number_array.push(Object.keys(boardData).filter( function (key) { return boardData[key][2][0] == dessert_xy[0]+i*-1 &&  boardData[key][2][1] == dessert_xy[1]+j})[0])
+            }
+            for(j=i*-1; j<i;j++) {
+                console.log(j,i)
+                let num = Object.keys(boardData).filter( function (key) { return boardData[key][2][0] == boardData[number_tile][2][0]+j &&  boardData[key][2][1] == boardData[number_tile][2][1]+i})[0]
+                let found = dice_array.find(element => element == num)
+                if(!found && num) {
+                    dice_array.push(num)
+                    number_array.push(num)
+                    console.log(num)
+                }
+            }
+            for(j=i; j>i*-1;j--) {
+                console.log(i,j)
+                let num = Object.keys(boardData).filter( function (key) { return boardData[key][2][0] == boardData[number_tile][2][0]+i &&  boardData[key][2][1] == boardData[number_tile][2][1]+j})[0]
+                let found = dice_array.find(element => element == num)
+                if(!found && num) {
+                    dice_array.push(num)
+                    number_array.push(num)
+                    console.log(num)
+                }
+            }
+            for(j=i; j>i*-1;j--) {
+                console.log(j,i*-1)
+                let num = Object.keys(boardData).filter( function (key) { return boardData[key][2][0] == boardData[number_tile][2][0]+j &&  boardData[key][2][1] == boardData[number_tile][2][1]+i*-1})[0]
+                let found = dice_array.find(element => element == num)
+                if(!found && num) {
+                    dice_array.push(num)
+                    number_array.push(num)
+                    console.log(num)
+                }
+            }
+            console.log(dice_array)
+        })
+    }

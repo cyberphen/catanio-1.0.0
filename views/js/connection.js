@@ -1,12 +1,13 @@
 const socket = io()
 
-socket.on("authCodeGenerated", authCode => {
-    //alert(authCode)
-    let authData = {}
-    authData.userName = localStorage.getItem("userName")
-    authData.authCode = localStorage.getItem("authCode")
-    socket.emit("authCodeGenerated",authData)
-    localStorage.setItem("authCode", authCode)
+socket.on("getDetails", () => { //To send initial details of the user (variables): userName
+    let details = {}
+    details.userName = localStorage.getItem("userName")
+    socket.emit("getDetails", details)
+}) //emits: getDetails
+
+socket.on("message", message => {
+    alert(message)
 })
 
 socket.on("logout", (message) => {

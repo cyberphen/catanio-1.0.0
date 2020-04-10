@@ -1,0 +1,66 @@
+server - functions.js
+
+// const update_authCode = (db,authData) => {
+//     db.collection("users").updateOne({
+//         userName: authData.userName,
+//         authCode: authData.authCode
+//     },{
+//         $set: {
+//             authCode: authData.newAuthCode
+//         }
+//     })
+// }
+
+// const check_auth = (db, authData, socket) => {
+//     db.collection("users").findOne({
+//         userName: authData.userName,
+//         authCode: authData.authCode
+//     }, (error, task) => {
+//         if(task) {
+//             update_authCode(db,authData)
+//         }
+//         else if(error) {
+//             socket.emit("logout", `Error: ${error}`)
+//         }
+//         else {
+//             socket.emit("logout","User not found/Authentication token mismatch.")
+//         }
+//     })
+// }
+
+index.js
+
+//Find user and match the authcode
+        db.collection("users").findOne({
+            userName: req.body.userName,
+            // authCode: req.body.authCode
+        }, (error, task) => {
+
+
+    // socket.emit("authCodeGenerated", socket.id)
+
+// socket.on("authCodeGenerated", authData => {
+    //     console.log(authData)
+    //     MongoClient.connect(connectionURL, { useUnifiedTopology: true }, (error, client) => {
+    //         if(error) {
+    //             return console.log('Unable to connect to database!')
+    //         }
+    //         console.log("Connected to database successfully!")
+    //         const db = client.db(databaseName)
+    
+    //         //Find user and match the authcode
+    //         authData.newAuthCode = socket.id
+    //         check_auth(db,authData,socket)
+    //     })
+    // })
+
+client - connection.js
+
+// socket.on("authCodeGenerated", authCode => {
+//     //alert(authCode)
+//     let authData = {}
+//     authData.userName = localStorage.getItem("userName")
+//     authData.authCode = localStorage.getItem("authCode")
+//     socket.emit("authCodeGenerated",authData)
+//     localStorage.setItem("authCode", authCode)
+// })
